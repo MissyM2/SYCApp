@@ -30,7 +30,7 @@ namespace SYCApp.Maui.Tests.ViewModels
         }
 
         [Fact]
-        public void GoToRegistrationCommand_navigates_to_the_login_page()
+        public void GoToRegistrationCommand_navigates_to_the_registration_page()
         {
             LoginPageVM _sut = CreateLoginPageVM();
 
@@ -46,8 +46,8 @@ namespace SYCApp.Maui.Tests.ViewModels
 
             _sut.LoginUserCommand.Execute(null);
 
-            _sut.Email.Errors.Should().NotBeEmpty();
-            _sut.Password.Errors.Should().NotBeEmpty();
+            _sut.UserEmail.Errors.Should().NotBeEmpty();
+            _sut.UserPassword.Errors.Should().NotBeEmpty();
         }
 
         [Fact]
@@ -55,8 +55,8 @@ namespace SYCApp.Maui.Tests.ViewModels
         {
             _mockUserModelRepository.GetAllAsyncReturns(new List<UserModel>());
             LoginPageVM _sut = CreateLoginPageVM();
-            _sut.Email.Value = "tester@email.com";
-            _sut.Password.Value = "pass";
+            _sut.UserEmail.Value = "tester@email.com";
+            _sut.UserPassword.Value = "pass";
 
             _sut.LoginUserCommand.Execute(null);
 

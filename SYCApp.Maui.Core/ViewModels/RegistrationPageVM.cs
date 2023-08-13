@@ -18,13 +18,16 @@ namespace SYCApp.Maui.Core.ViewModels
         private readonly IRepository<UserModel> _userModelRepository;
 
         [ObservableProperty]
-        ValidatableObject<string> name;
+        ValidatableObject<string> firstName;
 
         [ObservableProperty]
-        ValidatableObject<string> email;
+        ValidatableObject<string> lastName;
 
         [ObservableProperty]
-        ValidatableObject<string> password;
+        ValidatableObject<string> userEmail;
+
+        [ObservableProperty]
+        ValidatableObject<string> hashedPassword;
 
         [ObservableProperty]
         ValidatableObject<string> confirmationPassword;
@@ -49,6 +52,7 @@ namespace SYCApp.Maui.Core.ViewModels
         private async Task RegisterUser()
         {
             EntriesCorrectlyPopulated();
+
             if (!EntriesCorrectlyPopulated())
             {
                 return;
@@ -56,10 +60,12 @@ namespace SYCApp.Maui.Core.ViewModels
             IsBusy = true;
             var user = new UserModel()
             {
-                Email = Email.Value,
-                FirstName = Name.Value,
+                FirstName = FirstName.Value,
+                LastName= LastName.Value,
+                UserEmail = UserEmail.Value,
+                HashedPassword = HashedPassword.Value,
+                
                 //HashedPassword = SecurePasswordHasher.Hash(Password.Value)
-                HashedPassword = Password.Value
             };
             await _userModelRepository.SaveAsync(user);
 
@@ -75,31 +81,40 @@ namespace SYCApp.Maui.Core.ViewModels
 
         private void AddValidations()
         {
-            Name = new ValidatableObject<string>();
-            Email = new ValidatableObject<string>();
-            Password = new ValidatableObject<string>();
+            FirstName = new ValidatableObject<string>();
+            LastName = new ValidatableObject<string>();
+            UserEmail = new ValidatableObject<string>();
+            HashedPassword = new ValidatableObject<string>();
             ConfirmationPassword = new ValidatableObject<string>();
 
-            Name.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Name is empty." });
+            FirstName.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "FirstName is empty." });
+            LastName.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "LastName is empty." });
 
-            Email.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Email is empty." });
-            Email.Validations.Add(new EmailRule<string> { ValidationMessage = "Email is not in a correct format." });
+            UserEmail.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Email is empty." });
+            UserEmail.Validations.Add(new EmailRule<string> { ValidationMessage = "Email is not in a correct format." });
 
-            Password.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password is empty." });
+            HashedPassword.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password is empty." });
 
+            ConfirmationPassword.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Confirmation Password is empty." });
             ConfirmationPassword.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password is empty." });
 
         }
 
         private bool EntriesCorrectlyPopulated()
         {
-            Name.Validate();
-            Email.Validate();
-            Password.Validate();
+            FirstName.Validate();
+            LastName.Validate();
+            UserEmail.Validate();
+            HashedPassword.Validate();
             ConfirmationPassword.Validate();
 
 
-            return Name.IsValid && Email.IsValid && Password.IsValid && ConfirmationPassword.IsValid;
+            return
+                FirstName.IsValid &&
+                LastName.IsValid &&
+                UserEmail.IsValid &&
+                HashedPassword.IsValid &&
+                ConfirmationPassword.IsValid;
         }
     }
 

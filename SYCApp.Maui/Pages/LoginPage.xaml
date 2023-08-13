@@ -25,17 +25,17 @@
                          VerticalOptions="FillAndExpand">
 
                 <Entry  Style="{StaticResource Input}"
-                        Text="{Binding Email.Value, Mode=TwoWay}"
+                        Text="{Binding UserEmail.Value, Mode=TwoWay}"
                        Placeholder="{Binding Login_Email}"/>
-                <Label Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                <Label Text="{Binding UserEmail.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
 					   Style="{StaticResource ValidationErrorLabel}"
                        Margin="26,0,24,10"/>
 
                 <Entry  Style="{StaticResource Input}"
-                        Text="{Binding Password.Value, Mode=TwoWay}"
+                        Text="{Binding UserPassword.Value, Mode=TwoWay}"
                        IsPassword="True"
                        Placeholder="{Binding Login_Password}"/>
-                <Label Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                <Label Text="{Binding UserPassword.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
 					   Style="{StaticResource ValidationErrorLabel}"
                        Margin="26,0,24,10"/>
 

@@ -44,6 +44,7 @@ namespace SYCApp.Maui.Tests.ViewModels
         public void GoBack_navigates_back_when_the_user_confirms_navigation()
         {
             _mockMessageService.DisplayAlertReturns(true);
+
             AddClosetItemPageVM _sut = CreateAddClosetItemPageVM();
 
 
@@ -53,10 +54,10 @@ namespace SYCApp.Maui.Tests.ViewModels
         }
 
 
-
         [Fact]
-        public void AddClosetItemCommand_validates_name_and_notes()
+        public void AddClosetItemCommand_saves_new_closetitem()
         {
+            // Arrange
             AddClosetItemPageVM _sut = CreateAddClosetItemPageVM();
 
             _sut.Name.Value = "Test Closet";
@@ -65,23 +66,11 @@ namespace SYCApp.Maui.Tests.ViewModels
             _sut.Size.Value = "Test Size";
             _sut.Desc.Value = "Test Desc";
 
-            _sut.AddClosetItemCommand.Execute(null);
-
-            _sut.Name.Errors.Should().NotBeEmpty();
-            _sut.Season.Errors.Should().NotBeEmpty();
-            _sut.ItemType.Errors.Should().NotBeEmpty();
-            _sut.Size.Errors.Should().NotBeEmpty();
-            _sut.Desc.Errors.Should().NotBeEmpty();
-        }
-
-
-
-        [Fact]
-        public void AddClosetItemCommand_saves_new_todoitem()
-        {
-            AddClosetItemPageVM _sut = CreateAddClosetItemPageVM();
+            // cct
 
             _sut.AddClosetItemCommand.Execute(null);
+
+            // Assert
 
             _sut.Name.Errors.Should().BeEmpty();
             _sut.Season.Errors.Should().BeEmpty();

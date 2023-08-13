@@ -27,10 +27,10 @@ namespace SYCApp.Maui.Core.ViewModels
         public string Login_Login => Localization.Strings.Login_Login;
 
         [ObservableProperty]
-        ValidatableObject<string> email;
+        ValidatableObject<string> userEmail;
 
         [ObservableProperty]
-        ValidatableObject<string> password;
+        ValidatableObject<string> userPassword;
 
         public LoginPageVM(
             INavigationService navigationService,
@@ -66,7 +66,7 @@ namespace SYCApp.Maui.Core.ViewModels
             IsBusy = true;
 
             var user = (await _userModelRepository.GetAllAsync())
-                .FirstOrDefault(x => x.Email == Email.Value);
+                .FirstOrDefault(x => x.UserEmail == UserEmail.Value);
 
             if (user == null)
             {
@@ -78,7 +78,7 @@ namespace SYCApp.Maui.Core.ViewModels
             {
                 var userLogin = new LoginModel()
                 {
-                    Username = Email.Value,
+                    Username = UserEmail.Value,
                     LoginDateTime = DateTime.Now,
                 };
                 await _loginModelRepository.SaveAsync(userLogin);
@@ -90,26 +90,26 @@ namespace SYCApp.Maui.Core.ViewModels
         private async Task DisplayCredentialsError()
         {
             await _messageService.DisplayAlert(Strings.Login_Error, Strings.Login_WrongCredentials, "Ok");
-            Password.Value = "";
+            UserPassword.Value = "";
         }
 
         private void AddValidations()
         {
-            Email = new ValidatableObject<string>();
-            Password = new ValidatableObject<string>();
+            UserEmail = new ValidatableObject<string>();
+            UserPassword = new ValidatableObject<string>();
 
-            Email.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Email is empty." });
-            Email.Validations.Add(new EmailRule<string> { ValidationMessage = "Email is not in correct format." });
+            UserEmail.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Email is empty." });
+            UserEmail.Validations.Add(new EmailRule<string> { ValidationMessage = "Email is not in correct format." });
 
-            Password.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password is empty." });
+            UserPassword.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password is empty." });
         }
 
         private bool EntriesCorrectlyPopulated()
         {
-            Email.Validate();
-            Password.Validate();
+            UserEmail.Validate();
+            UserPassword.Validate();
 
-            return Email.IsValid && Password.IsValid;
+            return UserEmail.IsValid && UserPassword.IsValid;
         }
     }
 }

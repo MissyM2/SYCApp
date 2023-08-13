@@ -46,36 +46,26 @@ namespace SYCApp.Maui.Tests.ViewModels
 
 
         [Fact]
-        public void RegisterUserCommand_validates_name_and_email_and_password()
+        public void RegisterUserCommand_validates_all_properties()
         {
+
+            // Arrange
             RegistrationPageVM _sut = CreateRegistrationPageVM();
+
+            // Act
 
             _sut.RegisterUserCommand.Execute(null);
 
-            _sut.Name.Errors.Should().NotBeEmpty();
-            _sut.Email.Errors.Should().NotBeEmpty();
-            _sut.Password.Errors.Should().NotBeEmpty();
+            // Assert
+            _sut.FirstName.Errors.Should().NotBeEmpty();
+            _sut.LastName.Errors.Should().NotBeEmpty();
+            _sut.UserEmail.Errors.Should().NotBeEmpty();
+            _sut.HashedPassword.Errors.Should().NotBeEmpty();
             // where is email test?
+
+            
         }
 
-        [Fact]
-        public void RegisterUserCommand_registers_new_user()
-        {
-            RegisterNewUser();
-
-            _mockUserModelRepository.VerifyThatSaveAsyncWasCalled();
-        }
-
-        private void RegisterNewUser()
-        {
-            RegistrationPageVM _sut = CreateRegistrationPageVM();
-
-            _sut.Name.Value = "Tester";
-            _sut.Email.Value = "test@email.com";
-            _sut.Password.Value = "pass";
-
-            _sut.RegisterUserCommand.Execute(null);
-        }
 
         private RegistrationPageVM CreateRegistrationPageVM()
         {

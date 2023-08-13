@@ -315,11 +315,11 @@
             <inheritdoc/>
             <inheritdoc/>
         </member>
-        <member name="P:SYCApp.Maui.Core.ViewModels.LoginPageVM.Email">
-            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.LoginPageVM.email"/>
+        <member name="P:SYCApp.Maui.Core.ViewModels.LoginPageVM.UserEmail">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.LoginPageVM.userEmail"/>
         </member>
-        <member name="P:SYCApp.Maui.Core.ViewModels.LoginPageVM.Password">
-            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.LoginPageVM.password"/>
+        <member name="P:SYCApp.Maui.Core.ViewModels.LoginPageVM.UserPassword">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.LoginPageVM.userPassword"/>
         </member>
         <member name="F:SYCApp.Maui.Core.ViewModels.LoginPageVM.goToRegistrationCommand">
             <summary>The backing field for <see cref="P:SYCApp.Maui.Core.ViewModels.LoginPageVM.GoToRegistrationCommand"/>.</summary>
@@ -338,14 +338,17 @@
             <inheritdoc/>
             <inheritdoc/>
         </member>
-        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.Name">
-            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.name"/>
+        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.FirstName">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.firstName"/>
         </member>
-        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.Email">
-            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.email"/>
+        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.LastName">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.lastName"/>
         </member>
-        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.Password">
-            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.password"/>
+        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.UserEmail">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.userEmail"/>
+        </member>
+        <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.HashedPassword">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.hashedPassword"/>
         </member>
         <member name="P:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.ConfirmationPassword">
             <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.RegistrationPageVM.confirmationPassword"/>
@@ -413,11 +416,20 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserEmail">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserEmail" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HashedPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HashedPassword" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmationPassword">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmationPassword" generated properties.</summary>
@@ -467,11 +479,20 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotBusy" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserEmail">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserEmail" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HashedPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HashedPassword" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmationPassword">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmationPassword" generated properties.</summary>

@@ -23,26 +23,34 @@
             <StackLayout BackgroundColor="White"
                          VerticalOptions="FillAndExpand">
                 <Entry Style="{StaticResource Input}"
-                       Text="{Binding Name.Value}"
-                       Placeholder="Name"
+                       Text="{Binding FirstName.Value}"
+                       Placeholder="Last Name"
                        Margin="24,30,24,0" />
-                <Label Text="{Binding Name.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                <Label Text="{Binding FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
 					   Style="{StaticResource ValidationErrorLabel}"
                        Margin="26,0,24,10"/>
 
                 <Entry Style="{StaticResource Input}"
-                       Text="{Binding Email.Value}"
+                       Text="{Binding LastName.Value}"
+                       Placeholder="Last Name"
+                       Margin="24,30,24,0" />
+                <Label Text="{Binding LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+					   Style="{StaticResource ValidationErrorLabel}"
+                       Margin="26,0,24,10"/>
+
+                <Entry Style="{StaticResource Input}"
+                       Text="{Binding UserEmail.Value}"
                        Placeholder="Email Address"
                        Margin="24,0,24,0" />
-                <Label Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                <Label Text="{Binding UserEmail.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
 					   Style="{StaticResource ValidationErrorLabel}"
                        Margin="26,0,24,10"/>
 
                 <Entry Placeholder="Password"
-                       Text="{Binding Password.Value}"
+                       Text="{Binding HashedPassword.Value}"
                        Margin="24,0,24,0"
                        IsPassword="True"/>
-                <Label Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                <Label Text="{Binding HashedPassword.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
 					   Style="{StaticResource ValidationErrorLabel}"
                        Margin="26,0,24,10"/>
 
