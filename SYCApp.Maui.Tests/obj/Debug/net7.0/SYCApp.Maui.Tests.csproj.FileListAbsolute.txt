@@ -1,9 +1,4 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping
-/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.csproj.AssemblyReference.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.AssemblyInfoInputs.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.AssemblyInfo.cs
-/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/xunit.runner.utility.netcoreapp10.dll
@@ -133,6 +128,11 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/SYCApp.Maui.Core.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/es/SYCApp.Maui.Core.resources.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/bin/Debug/net7.0/en/SYCApp.Maui.Core.resources.dll
+/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.csproj.AssemblyReference.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.AssemblyInfoInputs.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.AssemblyInfo.cs
+/Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.csproj.CopyComplete
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/SYCApp.Maui.Tests.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Maui.Tests/obj/Debug/net7.0/refint/SYCApp.Maui.Tests.dll

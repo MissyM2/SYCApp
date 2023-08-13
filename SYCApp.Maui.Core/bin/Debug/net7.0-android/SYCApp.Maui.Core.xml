@@ -195,6 +195,9 @@
         <member name="P:SYCApp.Maui.Core.ViewModels.AdminLoginsPageVM.SelectedListItem">
             <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.AdminLoginsPageVM.selectedListItem"/>
         </member>
+        <member name="P:SYCApp.Maui.Core.ViewModels.AdminLoginsPageVM.LoginId">
+            <inheritdoc cref="F:SYCApp.Maui.Core.ViewModels.AdminLoginsPageVM.loginId"/>
+        </member>
         <member name="F:SYCApp.Maui.Core.ViewModels.AdminLoginsPageVM.getLoginsCommand">
             <summary>The backing field for <see cref="P:SYCApp.Maui.Core.ViewModels.AdminLoginsPageVM.GetLoginsCommand"/>.</summary>
         </member>
@@ -407,6 +410,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedListItem">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedListItem" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LoginId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LoginId" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserId">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserId" generated properties.</summary>
         </member>
@@ -466,6 +472,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedListItem">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedListItem" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LoginId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LoginId" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserId">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserId" generated properties.</summary>

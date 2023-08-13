@@ -22,6 +22,9 @@ namespace SYCApp.Maui.Core.ViewModels
         [ObservableProperty]
         string selectedListItem;
 
+        [ObservableProperty]
+        int loginId;
+
         public AdminLoginsPageVM(
             INavigationService navigationService,
             IMessageService messageService,
@@ -68,7 +71,7 @@ namespace SYCApp.Maui.Core.ViewModels
         [RelayCommand]
         public void GoToDetails()
         {
-            Console.WriteLine("Go to getils");
+            Console.WriteLine("Go to detailils");
 
         }
 
