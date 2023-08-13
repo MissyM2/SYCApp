@@ -5,7 +5,7 @@ namespace SYCApp.Maui.Interfaces
     {
         Task GoToRegistrationPageAsync();
         Task GoToLoginPageAsync();
-        Task GoToHomePageAsync();
+        Task GoToDashboardPageAsync();
         Task GoBackAsync();
         Task GoToMainFlowAsync();
         Task GoToClosetItemListPageAsync();

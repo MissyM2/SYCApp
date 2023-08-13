@@ -15,7 +15,7 @@ namespace SYCApp.Maui.Services
             await Shell.Current.GoToAsync("..");
         }
 
-        public async Task GoToHomePageAsync()
+        public async Task GoToDashboardPageAsync()
         {
             await Shell.Current.GoToAsync($"//{nameof(DashboardPage)}");
         }
