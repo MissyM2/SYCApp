@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SYCApp.Maui.Pages.AddClosetItemPage"
+             Title="AddClosetItemPage"
+             Shell.FlyoutBehavior="Flyout">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}"/>
+    </Shell.BackButtonBehavior>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Command="{Binding LogoutUserCommand}"/>
+    </ContentPage.ToolbarItems>
+
+     <VerticalStackLayout>
+        <Label Text="Name:"/>
+        <Entry Text="{Binding Name.Value}" />
+        <Label Text="Season:" />
+        <Entry Text="{Binding Season.Value}" />
+        <Label Text="Item Type:"/>
+        <Entry Text="{Binding ItemType.Value}" />
+        <Label Text="Size:" />
+        <Entry Text="{Binding Size.Value}" />
+        <Label Text="Desc:"/>
+        <Entry Text="{Binding Desc.Value}" />
+
+
+        <!--<ActivityIndicator
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="Center" />-->
+
+        <Button
+                Padding="20,0"
+                Command="{Binding AddClosetItemCommand}"
+                HorizontalOptions="Center"
+                IsEnabled="{Binding IsNotBusy}"
+                Text="Save"
+                VerticalOptions="EndAndExpand"/>
+    </VerticalStackLayout>
+</ContentPage>

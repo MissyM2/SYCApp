@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1706.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYCApp.Maui", "SYCApp.Maui\SYCApp.Maui.csproj", "{2D0088B0-500A-4622-A570-4F69CC3BADCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYCApp.Maui.Core", "SYCApp.Maui.Core\SYCApp.Maui.Core.csproj", "{057D89CC-4E11-4175-9E64-497813628C64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2D0088B0-500A-4622-A570-4F69CC3BADCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D0088B0-500A-4622-A570-4F69CC3BADCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D0088B0-500A-4622-A570-4F69CC3BADCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057D89CC-4E11-4175-9E64-497813628C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057D89CC-4E11-4175-9E64-497813628C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057D89CC-4E11-4175-9E64-497813628C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057D89CC-4E11-4175-9E64-497813628C64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

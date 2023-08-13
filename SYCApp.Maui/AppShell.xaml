@@ -3,13 +3,35 @@
     x:Class="SYCApp.Maui.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SYCApp.Maui"
+    xmlns:local="clr-namespace:SYCApp.Maui.Pages"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
+
+    <ShellItem Route="LoginPage" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
+    </ShellItem>
+
+    <FlyoutItem Title="Dashboard" >
+            <ShellContent ContentTemplate="{DataTemplate local:DashboardPage}" Route="DashboardPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" Route="SettingsPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Closet Item List">
+        <ShellContent ContentTemplate="{DataTemplate local:ClosetItemListPage}" Route="ClosetItemListPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Users Admin">
+        <ShellContent ContentTemplate="{DataTemplate local:AdminUsersPage}" Route="AdminUsersPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Logins Admin">
+        <ShellContent ContentTemplate="{DataTemplate local:AdminLoginsPage}" Route="AdminLoginsPage" />
+    </FlyoutItem>
 
 </Shell>
 

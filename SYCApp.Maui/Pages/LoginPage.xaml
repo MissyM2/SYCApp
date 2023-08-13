@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SYCApp.Maui.Pages.LoginPage"
+             xmlns:vm="clr-namespace:SYCApp.Maui.Core.ViewModels;assembly=SYCApp.Maui.Core"
+             xmlns:converters="clr-namespace:SYCApp.Core.Converters;assembly=SYCApp.Maui.Core"
+             x:DataType="vm:LoginPageVM"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="0,70,0,0"
+                         BackgroundColor="{StaticResource LightBlueBackground}">
+                <Label Style="{StaticResource TitleLabel}"
+                        Text="Login"
+                        Margin="1,0,0,30"/>
+
+            <StackLayout BackgroundColor="White"
+                         VerticalOptions="FillAndExpand">
+
+                <Entry  Style="{StaticResource Input}"
+                        Text="{Binding Email.Value, Mode=TwoWay}"
+                       Placeholder="{Binding Login_Email}"/>
+                <Label Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+					   Style="{StaticResource ValidationErrorLabel}"
+                       Margin="26,0,24,10"/>
+
+                <Entry  Style="{StaticResource Input}"
+                        Text="{Binding Password.Value, Mode=TwoWay}"
+                       IsPassword="True"
+                       Placeholder="{Binding Login_Password}"/>
+                <Label Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+					   Style="{StaticResource ValidationErrorLabel}"
+                       Margin="26,0,24,10"/>
+
+                 <StackLayout HorizontalOptions="Center"
+                             VerticalOptions="EndAndExpand"
+                             Margin="0,0,0,80">
+                    <Button Style="{StaticResource BlueButton}"
+                            Text="{Binding Login_Login}"
+                            VerticalOptions="EndAndExpand"
+                            Command="{Binding LoginUserCommand}"/>
+
+                    <Button Style="{StaticResource NoBackgroundSmallButton}"
+                            Text="Don't have an account? Sign up"
+                            Command="{Binding GoToRegistrationCommand}"/>
+
+                </StackLayout>
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
