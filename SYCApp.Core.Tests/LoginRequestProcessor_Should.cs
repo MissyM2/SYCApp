@@ -73,7 +73,7 @@ namespace SYCApp.Core
         }
 
         [Fact]
-        public void Should_Not_Save__Login_Request_If_User_Does_Not_Exist()
+        public void Should_Not_Save_Login_Request_If_User_Does_Not_Exist()
         {
             _existingUserModels.Clear();
 

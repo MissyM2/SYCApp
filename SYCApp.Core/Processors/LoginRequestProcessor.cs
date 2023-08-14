@@ -18,30 +18,42 @@ namespace SYCApp.Core.Processors
 
         public LoginResult LoginUser(LoginRequest loginRequest)
         {
+            // test
             if (loginRequest == null)
             {
                 throw new ArgumentNullException(nameof(loginRequest));
             }
 
-
+            // test
+            var existingUsers = _loginService.GetExistingUserModels();
 
             var result = CreateLoginObject<LoginResult>(loginRequest);
-            var tempVar = 1;
 
-            if (tempVar == 3)
+            // save test
+            if (existingUsers.Any())
             {
-                result.Flag = LoginResultFlag.Failure;
-            }
-            else
-            {
-                var userLogin = CreateLoginObject<LoginModel>(loginRequest);
-                userLogin.UserId = 1;
+                var user = existingUsers.First();
 
-                _loginService.Save(userLogin);
+                var login = CreateLoginObject<LoginModel>(loginRequest);
+                login.UserId = user.Id;
 
-                result.LoginId = userLogin.Id;
+                
+                _loginService.Save(login);
+
+                // test
+                result.LoginId = login.Id;
+
+                // test
                 result.Flag = LoginResultFlag.Success;
             }
+            // not save test
+            else
+            {
+
+                // test
+                result.Flag = LoginResultFlag.Failure;
+            }
+           
 
             return result;
         }
