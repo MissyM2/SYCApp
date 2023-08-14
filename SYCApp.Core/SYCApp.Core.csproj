@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DataServices\" />
+    <None Remove="Enums\" />
+    <None Remove="Models\" />
+    <None Remove="Processors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataServices\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Models\" />
+    <Folder Include="Processors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SYCApp.Domain\SYCApp.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
