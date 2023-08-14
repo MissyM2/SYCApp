@@ -9,7 +9,7 @@ using SYCApp.Domain;
 
 namespace SYCApp.Core
 {
-	public class LoginRequestProcessor_Should
+	public class LoginRequestProcessorTests
     {
         private LoginRequestProcessor _processor;
         private LoginRequest _request;
@@ -17,7 +17,7 @@ namespace SYCApp.Core
 
         private List<UserModel> _existingUserModels;
 
-        public LoginRequestProcessor_Should()
+        public LoginRequestProcessorTests()
         {
             //Arrange
             _request = new LoginRequest
