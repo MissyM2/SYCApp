@@ -14,10 +14,10 @@ namespace SYCApp.Domain.BaseModels
 
         [DataType(DataType.Date)]
         public DateTime LoginDateTime { get; set; }
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            yield return new ValidationResult("There are no validations set up yet", new[] { nameof(LoginDateTime) });
-        }
+        //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        //{
+        //    yield return new ValidationResult("There are no validations set up yet", new[] { nameof(LoginDateTime) });
+        //}
     }
 }
 
