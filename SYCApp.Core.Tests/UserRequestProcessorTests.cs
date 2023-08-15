@@ -17,6 +17,8 @@ namespace SYCApp.Core
 
         private List<UserModel> _existingUserModels;
 
+        public AddUserResult result { get; private set; }
+
         public UserRequestProcessorTests()
         {
             //Arrange
@@ -106,20 +108,18 @@ namespace SYCApp.Core
 
 
         [Theory]
-        [InlineData(AddUserResultFlag.Failure, false)]
-        [InlineData(AddUserResultFlag.Success, true)]
+        [InlineData(AddUserResultFlag.Failure, true)]
+        [InlineData(AddUserResultFlag.Success, false)]
         public void Should_Return_SuccessOrFailure_Flag_In_Result(AddUserResultFlag addUserSuccessFlag, bool isExisting)
         {
-            // ***** Act *****
-
-            if (isExisting)
+            if (!isExisting)
             {
-               
+                _existingUserModels.Clear();
             }
-            AddUserResult result = _processor.AddUser(_request);
 
+            var result = _processor.AddUser(_request);
 
-
+            
 
             // ***** Assert *****
             addUserSuccessFlag.ShouldBe(result.Flag);

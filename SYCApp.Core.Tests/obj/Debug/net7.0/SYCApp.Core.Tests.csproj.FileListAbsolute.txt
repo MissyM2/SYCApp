@@ -1,9 +1,4 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping
-/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.csproj.AssemblyReference.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.AssemblyInfoInputs.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.AssemblyInfo.cs
-/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/EmptyFiles/archive/empty.7z
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/EmptyFiles/archive/empty.bz2
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/EmptyFiles/archive/empty.gz
@@ -148,6 +143,11 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/SYCApp.Domain.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/SYCApp.Core.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/SYCApp.Domain.pdb
+/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.csproj.AssemblyReference.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.AssemblyInfoInputs.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.AssemblyInfo.cs
+/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.csproj.CopyComplete
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/refint/SYCApp.Core.Tests.dll
