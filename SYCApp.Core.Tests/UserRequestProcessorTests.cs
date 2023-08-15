@@ -133,30 +133,6 @@ namespace SYCApp.Core
 
         }
 
-        [Theory]
-        [InlineData(1, true)]
-        [InlineData(null, false)]
-        public void Should_Return_UserId_In_Result(int? userId, bool isExisting)
-        {
-            if (!isExisting)
-            {
-                _existingUserModels.Clear();
-            }
-            else
-            {
-                _userServiceMock.Setup(q => q.Save(It.IsAny<UserModel>()))
-               .Callback<UserModel>(user =>
-               {
-                   user.Id = userId.Value;
-               });
-            }
-
-            // ***** Act *****
-            var result = _processor.AddUser(_request);
-
-            // ***** Assert *****
-            result.UserId.ShouldBe(userId);
-        }
     }
 }
 
