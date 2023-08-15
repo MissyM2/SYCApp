@@ -29,7 +29,13 @@ namespace SYCApp.Core
                 UserEmail = "test@email.com",
                 HashedPassword = "Password1"
             };
-            _existingUserModels = new List<UserModel>() { new UserModel() { Id = 1 } };
+            _existingUserModels = new List<UserModel>() { new UserModel() {
+                Id = 1,
+                FirstName="FirstNameU1",
+                LastName="LastNameU1",
+                UserEmail = "test@email.com",
+                HashedPassword = "Password1"
+            } };
 
             _userServiceMock = new Mock<IUserService>();
             _userServiceMock.Setup(q => q.GetExistingUserModels(_request.UserEmail))
@@ -55,6 +61,8 @@ namespace SYCApp.Core
         {
             // ***** Arrange *****
             // arrange was mostly done more globally
+            _existingUserModels.Clear();
+
             UserModel savedUser = null;
 
             _userServiceMock.Setup(q => q.Save(It.IsAny<UserModel>()))
@@ -79,7 +87,6 @@ namespace SYCApp.Core
         [Fact]
         public void Should_Not_Save_User_Request_If_User_Already_Exists()
         {
-            _existingUserModels.Clear();
 
             // ***** Act *****
             _processor.AddUser(_request);

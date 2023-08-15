@@ -1,4 +1,3 @@
-/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/EmptyFiles/archive/empty.7z
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/EmptyFiles/archive/empty.bz2
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/EmptyFiles/archive/empty.gz
@@ -154,3 +153,4 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/SYCApp.Core.Tests.genruntimeconfig.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/obj/Debug/net7.0/ref/SYCApp.Core.Tests.dll
+/Users/missymaloney/Projects/SYCApp/SYCApp.Core.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping_SYCApp.Core.Tests
