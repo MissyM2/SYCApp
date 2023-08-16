@@ -21,7 +21,7 @@ namespace SYCApp.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _loginProcessor.LoginUser(request);
+                var result = await _loginProcessor.LoginUser(request);
                 if (result.Flag == Core.Enums.LoginResultFlag.Success)
                 {
                     return Ok(result);

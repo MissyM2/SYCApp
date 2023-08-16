@@ -1,4 +1,9 @@
-/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping
+/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping_SYCApp.Persistence.Tests
+/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.csproj.AssemblyReference.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.AssemblyInfoInputs.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.AssemblyInfo.cs
+/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/xunit.runner.utility.netcoreapp10.dll
@@ -138,11 +143,6 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/SYCApp.Persistence.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/SYCApp.Core.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/bin/Debug/net7.0/SYCApp.Domain.pdb
-/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.csproj.AssemblyReference.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.AssemblyInfoInputs.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.AssemblyInfo.cs
-/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.csproj.CopyComplete
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/SYCApp.Persistence.Tests.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/obj/Debug/net7.0/refint/SYCApp.Persistence.Tests.dll

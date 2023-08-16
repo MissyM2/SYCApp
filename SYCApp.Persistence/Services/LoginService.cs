@@ -1,27 +1,15 @@
 ﻿using System;
-using SYCApp.Core.DataServices;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Domain;
 
 namespace SYCApp.Persistence.Services
 {
-	public class LoginService : ILoginService
+	public class LoginService : GenericRepository<LoginModel>, ILoginService
     {
-        private readonly SYCAppDbContext _context;
 
-        public LoginService(SYCAppDbContext context)
+        public LoginService(SYCAppDbContext dbContext) : base(dbContext)
         {
-            this._context = context;
         }
 
-        public IEnumerable<UserModel> GetExistingUserModels()
-        {
-            return _context.Users.ToList();
-        }
-
-        public void Save(LoginModel login)
-        {
-            _context.Add(login);
-            _context.SaveChanges();
-        }
     }
 }

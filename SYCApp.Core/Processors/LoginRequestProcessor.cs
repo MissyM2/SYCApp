@@ -1,5 +1,5 @@
 ﻿using System;
-using SYCApp.Core.DataServices;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
 using SYCApp.Core.Models;
 using SYCApp.Domain;
@@ -16,7 +16,7 @@ namespace SYCApp.Core.Processors
             this._loginService = loginService;
         }
 
-        public LoginResult LoginUser(LoginRequest loginRequest)
+        public async Task<LoginResult> LoginUser(LoginRequest loginRequest)
         {
             // test
             if (loginRequest == null)
@@ -25,20 +25,22 @@ namespace SYCApp.Core.Processors
             }
 
             // test
-            var existingUsers = _loginService.GetExistingUserModels();
+            var existingUsers = await _loginService.GetAllAsync();
 
             var result = CreateLoginObject<LoginResult>(loginRequest);
 
             // save test
-            if (existingUsers.Any())
+            if (existingUsers != null)
             {
-                var user = existingUsers.First();
+                var user = existingUsers.FirstOrDefault();
 
                 var login = CreateLoginObject<LoginModel>(loginRequest);
                 login.UserId = user.Id;
 
                 
-                _loginService.Save(login);
+                await _loginService.AddAsync(login);
+
+                //_loginService.
 
                 // test
                 result.LoginId = login.Id;

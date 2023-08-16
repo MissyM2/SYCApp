@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace SYCApp.Domain.BaseModels
 {
     //public abstract class LoginModelBase : IValidatableObject
-    public abstract class LoginModelBase
+    public abstract class LoginModelBase : BaseEntity
     {
 
         [Required]

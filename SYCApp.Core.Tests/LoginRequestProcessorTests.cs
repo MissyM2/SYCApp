@@ -1,7 +1,7 @@
 ﻿using System;
 using Moq;
 using Shouldly;
-using SYCApp.Core.DataServices;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
 using SYCApp.Core.Models;
 using SYCApp.Core.Processors;
@@ -27,9 +27,9 @@ namespace SYCApp.Core
             };
             _existingUserModels = new List<UserModel>() { new UserModel() { Id = 1 } };
 
-            _loginServiceMock = new Mock<ILoginService>();
-            _loginServiceMock.Setup(q => q.GetExistingUserModels())
-                .Returns(_existingUserModels);
+            //_loginServiceMock = new Mock<ILoginService>();
+            //_loginServiceMock.Setup(q => q.GetAllAsync())
+            //    .Returns(_existingUserModels);
 
             _processor = new LoginRequestProcessor(_loginServiceMock.Object);
         }
@@ -49,21 +49,21 @@ namespace SYCApp.Core
         }
 
         [Fact]
-        public void Should_Save_Login_Request()
+        public async Task Should_Save_Login_Request()
         {
             // ***** Arrange *****
             // arrange was mostly done more globally
             LoginModel savedLogin = null;
-            _loginServiceMock.Setup(q => q.Save(It.IsAny<LoginModel>()))
+            _loginServiceMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
                 .Callback<LoginModel>(login =>
                 {
                     savedLogin = login;
                 });
 
             // ***** Act *****
-            _processor.LoginUser(_request);
+            await _processor.LoginUser(_request);
 
-            _loginServiceMock.Verify(q => q.Save(It.IsAny<LoginModel>()), Times.Once);
+            _loginServiceMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Once);
 
             // ***** Assert ******
             savedLogin.ShouldNotBeNull();
@@ -73,22 +73,21 @@ namespace SYCApp.Core
         }
 
         [Fact]
-        public void Should_Not_Save_Login_Request_If_User_Does_Not_Exist()
+        public async Task Should_Not_Save_Login_Request_If_User_Does_Not_Exist()
         {
             _existingUserModels.Clear();
 
             // ***** Act *****
-            _processor.LoginUser(_request);
+            await _processor.LoginUser(_request);
 
-            _loginServiceMock.Verify(q => q.Save(It.IsAny<LoginModel>()), Times.Never);
+            _loginServiceMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Never);
         }
 
-
         [Fact]
-        public void Should_Return_LoginResponse_With_Request_Values()
+        public async Task Should_Return_LoginResponse_With_Request_Values()
         {
             //Act
-            LoginResult result = _processor.LoginUser(_request);
+            LoginResult result = await _processor.LoginUser(_request);
 
             //Assert
             result.ShouldNotBeNull();
@@ -97,14 +96,10 @@ namespace SYCApp.Core
 
         }
 
-       
-
-       
-
         [Theory]
         [InlineData(LoginResultFlag.Failure, false)]
         [InlineData(LoginResultFlag.Success, true)]
-        public void Should_Return_SuccessOrFailure_Flag_In_Result(LoginResultFlag bookingSuccessFlag, bool isAvailable)
+        public async Task Should_Return_SuccessOrFailure_Flag_In_Result(LoginResultFlag bookingSuccessFlag, bool isAvailable)
         {
             if (!isAvailable)
             {
@@ -112,7 +107,7 @@ namespace SYCApp.Core
             }
 
             // ***** Act *****
-            var result = _processor.LoginUser(_request);
+            var result = await _processor.LoginUser(_request);
 
             // ***** Assert *****
             bookingSuccessFlag.ShouldBe(result.Flag);
@@ -122,7 +117,7 @@ namespace SYCApp.Core
         [Theory]
         [InlineData(1, true)]
         [InlineData(null, false)]
-        public void Should_Return_LoginId_In_Result(int? loginId, bool isExisting)
+        public async Task Should_Return_LoginId_In_Result(int? loginId, bool isExisting)
         {
             if (!isExisting)
             {
@@ -130,7 +125,7 @@ namespace SYCApp.Core
             }
             else
             {
-                _loginServiceMock.Setup(q => q.Save(It.IsAny<LoginModel>()))
+                _loginServiceMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
                .Callback<LoginModel>(login =>
                {
                    login.Id = loginId.Value;
@@ -138,7 +133,7 @@ namespace SYCApp.Core
             }
 
             // ***** Act *****
-            var result = _processor.LoginUser(_request);
+            var result = await _processor.LoginUser(_request);
 
             // ***** Assert *****
             result.LoginId.ShouldBe(loginId);

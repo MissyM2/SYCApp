@@ -5,7 +5,7 @@ namespace SYCApp.Core.Processors
 {
 	public interface IUserRequestProcessor
 	{
-        AddUserResult AddUser(AddUserRequest addUserRequest);
+        Task<AddUserResult> AddUser(AddUserRequest addUserRequest);
     }
 }
 

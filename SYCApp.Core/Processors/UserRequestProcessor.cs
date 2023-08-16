@@ -1,5 +1,5 @@
 ﻿using System;
-using SYCApp.Core.DataServices;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
 using SYCApp.Core.Models;
 using SYCApp.Domain;
@@ -16,7 +16,7 @@ namespace SYCApp.Core.Processors
             this._userService = userService;
         }
 
-        public AddUserResult AddUser(AddUserRequest addUserRequest)
+        public async Task<AddUserResult> AddUser(AddUserRequest addUserRequest)
         {
             // test
             if (addUserRequest == null)
@@ -25,19 +25,19 @@ namespace SYCApp.Core.Processors
             }
 
             // test
-            var existingUsers = _userService.GetExistingUserModels(addUserRequest.UserEmail);
+            var existingUsers = _userService.GetExistingUserModelsByUsername(addUserRequest.UserEmail);
 
             var result = CreateAddUserObject<AddUserResult>(addUserRequest);
 
             // test
-            if (!existingUsers.Any())
+            if (existingUsers == null)
             {
 
                 var addUser = CreateAddUserObject<UserModel>(addUserRequest);
                 //user.UserId = user.Id;
 
 
-                _userService.Save(addUser);
+                await _userService.AddAsync(addUser);
 
                 // test
                 result.UserId = addUser.Id;

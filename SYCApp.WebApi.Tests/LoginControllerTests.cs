@@ -23,7 +23,8 @@ namespace SYCApp.WebApi.Tests
             _request = new LoginRequest();
             _result = new LoginResult();
 
-            _loginProcessor.Setup(x => x.LoginUser(_request)).Returns(_result);
+            //MISSY
+            //_loginProcessor.Setup(x => x.LoginUser(_request)).Returns(_result);
         }
 
         [Theory]

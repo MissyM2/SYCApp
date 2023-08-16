@@ -5,11 +5,11 @@ using SYCApp.Persistence.Services;
 
 namespace SYCApp.Persistence.Tests
 {
-	public class LoginServiceTest
+	public class LoginServiceTests
     {
 
         [Fact]
-        public void Should_Return_Existing_Users()
+        public async Task Should_Return_Existing_Users()
         {
 
             // ***** Arrange *****
@@ -23,22 +23,22 @@ namespace SYCApp.Persistence.Tests
                 .Options;
 
             // need to arrange some dummy data for testing
-            using var context = new SYCAppDbContext(dbOptions);
+            using var dbContext = new SYCAppDbContext(dbOptions);
             {
-                context.Add(new UserModel { Id = 2, FirstName = "FirstName2", LastName = "LastName2", UserEmail = "u2@email.com", HashedPassword = "UserPass2" });
-                context.Add(new UserModel { Id = 3, FirstName = "FirstName3", LastName = "LastName3", UserEmail = "u3@email.com", HashedPassword = "UserPass3" });
+                dbContext.Add(new UserModel { Id = 2, FirstName = "FirstName2", LastName = "LastName2", UserEmail = "u2@email.com", HashedPassword = "UserPass2" });
+                dbContext.Add(new UserModel { Id = 3, FirstName = "FirstName3", LastName = "LastName3", UserEmail = "u3@email.com", HashedPassword = "UserPass3" });
 
-                context.Add(new LoginModel { UserId = 4, LoginDateTime = date });
-                context.Add(new LoginModel { UserId = 5, LoginDateTime = date.AddDays(-1) });
+                dbContext.Add(new LoginModel { UserId = 4, LoginDateTime = date });
+                dbContext.Add(new LoginModel { UserId = 5, LoginDateTime = date.AddDays(-1) });
 
-                context.SaveChanges();
+                dbContext.SaveChangesAsync();
             }
 
             //  need to arrange LoginService
-            var loginService = new LoginService(context);
+            var loginService = new LoginService(dbContext);
 
             // ****** Act ******
-            var existingUsers = loginService.GetExistingUserModels();
+            var existingUsers = await loginService.GetAllAsync();
 
             // ****** Assert *****
             // using default assert
@@ -66,12 +66,13 @@ namespace SYCApp.Persistence.Tests
                 LoginDateTime = new DateTime()
             };
 
-            using var context = new SYCAppDbContext(dbOptions);
-            var loginService = new LoginService(context);
-            loginService.Save(login);
+            using var dbContext = new SYCAppDbContext(dbOptions);
+            var loginService = new LoginService(dbContext);
+            var result = loginService.AddAsync(login);
 
-            var users = context.Logins.ToList();
+            var users = dbContext.Logins.ToList();
 
+            // what is this for?
             var login1 = Assert.Single(users);
 
             Assert.Equal(login.LoginDateTime, login.LoginDateTime);

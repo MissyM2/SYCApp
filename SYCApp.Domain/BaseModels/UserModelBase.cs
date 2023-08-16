@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SYCApp.Domain.BaseModels
 {
-    public abstract class UserModelBase
+    public abstract class UserModelBase : BaseEntity
     {
 
         [Required]

@@ -5,6 +5,6 @@ namespace SYCApp.Core.Processors
 {
     public interface ILoginRequestProcessor
     {
-        LoginResult LoginUser(LoginRequest loginRequest);
+        Task<LoginResult> LoginUser(LoginRequest loginRequest);
     }
 }

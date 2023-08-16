@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using SYCApp.Core.DataServices;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Processors;
 using SYCApp.Persistence;
 using SYCApp.Persistence.Services;
@@ -37,6 +37,10 @@ static void EnsureDatabaseCreated(SqliteConnection conn)
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<ILoginRequestProcessor, LoginRequestProcessor>();
 
+builder.Services.AddCors(options => {
+    options.AddPolicy("AllowAll", policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,6 +51,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

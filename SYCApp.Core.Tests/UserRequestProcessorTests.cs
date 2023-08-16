@@ -1,7 +1,7 @@
 ﻿using System;
 using Moq;
 using Shouldly;
-using SYCApp.Core.DataServices;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
 using SYCApp.Core.Models;
 using SYCApp.Core.Processors;
@@ -38,8 +38,8 @@ namespace SYCApp.Core
             } };
 
             _userServiceMock = new Mock<IUserService>();
-            _userServiceMock.Setup(q => q.GetExistingUserModels(_request.UserEmail))
-                .Returns(_existingUserModels);
+            //_userServiceMock.Setup(q => q.GetExistingUserModelsByUsername(_request.UserEmail))
+            //    .Returns(_existingUserModels);
 
             _processor = new UserRequestProcessor(_userServiceMock.Object);
         }
@@ -57,7 +57,7 @@ namespace SYCApp.Core
         }
 
         [Fact]
-        public void Should_Save_User_Request()
+        public async Task Should_Save_User_Request()
         {
             // ***** Arrange *****
             // arrange was mostly done more globally
@@ -65,16 +65,16 @@ namespace SYCApp.Core
 
             UserModel savedUser = null;
 
-            _userServiceMock.Setup(q => q.Save(It.IsAny<UserModel>()))
+            _userServiceMock.Setup(q => q.AddAsync(It.IsAny<UserModel>()))
                 .Callback<UserModel>(user =>
                 {
                     savedUser = user;
                 });
 
             // ***** Act *****
-            _processor.AddUser(_request);
+            await _processor.AddUser(_request);
 
-            _userServiceMock.Verify(q => q.Save(It.IsAny<UserModel>()), Times.Once);
+            _userServiceMock.Verify(q => q.AddAsync(It.IsAny<UserModel>()), Times.Once);
 
             // ***** Assert ******
             savedUser.ShouldNotBeNull();
@@ -85,21 +85,21 @@ namespace SYCApp.Core
         }
 
         [Fact]
-        public void Should_Not_Save_User_Request_If_User_Already_Exists()
+        public async Task Should_Not_Save_User_Request_If_User_Already_Exists()
         {
 
             // ***** Act *****
-            _processor.AddUser(_request);
+            await _processor.AddUser(_request);
 
-            _userServiceMock.Verify(q => q.Save(It.IsAny<UserModel>()), Times.Never);
+            _userServiceMock.Verify(q => q.AddAsync(It.IsAny<UserModel>()), Times.Never);
         }
 
 
         [Fact]
-        public void Should_Return_UserResponse_With_Request_Values()
+        public async Task Should_Return_UserResponse_With_Request_Values()
         {
             //Act
-            AddUserResult result = _processor.AddUser(_request);
+            AddUserResult result = await _processor.AddUser(_request);
 
             //Assert
             result.ShouldNotBeNull();
@@ -117,14 +117,14 @@ namespace SYCApp.Core
         [Theory]
         [InlineData(AddUserResultFlag.Failure, true)]
         [InlineData(AddUserResultFlag.Success, false)]
-        public void Should_Return_SuccessOrFailure_Flag_In_Result(AddUserResultFlag addUserSuccessFlag, bool isExisting)
+        public async Task Should_Return_SuccessOrFailure_Flag_In_Result(AddUserResultFlag addUserSuccessFlag, bool isExisting)
         {
             if (!isExisting)
             {
                 _existingUserModels.Clear();
             }
 
-            var result = _processor.AddUser(_request);
+            var result = await _processor.AddUser(_request);
 
             
 

@@ -7,16 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DataServices\" />
     <None Remove="Enums\" />
     <None Remove="Models\" />
     <None Remove="Processors\" />
+    <None Remove="Contracts\" />
+    <None Remove="Contracts\Identity\" />
+    <None Remove="Contracts\Persistence\" />
+    <None Remove="Contracts\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataServices\" />
     <Folder Include="Enums\" />
     <Folder Include="Models\" />
     <Folder Include="Processors\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Contracts\Identity\" />
+    <Folder Include="Contracts\Persistence\" />
+    <Folder Include="Contracts\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYCApp.Domain\SYCApp.Domain.csproj" />
