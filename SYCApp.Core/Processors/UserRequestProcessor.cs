@@ -1,7 +1,7 @@
 ﻿using System;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 using SYCApp.Domain;
 using SYCApp.Domain.BaseModels;
 
@@ -9,14 +9,14 @@ namespace SYCApp.Core.Processors
 {
     public class UserRequestProcessor : IUserRequestProcessor
     {
-        private IUserService _userService;
+        private IUserRepository _userRepository;
 
-        public UserRequestProcessor(IUserService userService)
+        public UserRequestProcessor(IUserRepository userRepository)
         {
-            this._userService = userService;
+            this._userRepository = userRepository;
         }
 
-        public async Task<AddUserResult> AddUser(AddUserRequest addUserRequest)
+        public async Task<AddUserResultDto> AddUser(AddUserRequestDto addUserRequest)
         {
             // test
             if (addUserRequest == null)
@@ -25,9 +25,9 @@ namespace SYCApp.Core.Processors
             }
 
             // test
-            var existingUsers = _userService.GetExistingUserModelsByUsername(addUserRequest.UserEmail);
+            var existingUsers = _userRepository.GetExistingUserModelsByUsername(addUserRequest.UserEmail);
 
-            var result = CreateAddUserObject<AddUserResult>(addUserRequest);
+            var result = CreateAddUserObject<AddUserResultDto>(addUserRequest);
 
             // test
             if (existingUsers == null)
@@ -37,7 +37,7 @@ namespace SYCApp.Core.Processors
                 //user.UserId = user.Id;
 
 
-                await _userService.AddAsync(addUser);
+                await _userRepository.AddAsync(addUser);
 
                 // test
                 result.UserId = addUser.Id;
@@ -58,7 +58,7 @@ namespace SYCApp.Core.Processors
         }
 
         // creation of a generic so I can use it in the above becauxe there is a lot of duplication
-        private static TUserModel CreateAddUserObject<TUserModel>(AddUserRequest addUserRequest) where TUserModel
+        private static TUserModel CreateAddUserObject<TUserModel>(AddUserRequestDto addUserRequest) where TUserModel
             : UserModelBase, new()
         {
             return new TUserModel

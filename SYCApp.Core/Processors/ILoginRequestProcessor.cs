@@ -1,10 +1,10 @@
 ﻿using System;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 
 namespace SYCApp.Core.Processors
 {
     public interface ILoginRequestProcessor
     {
-        Task<LoginResult> LoginUser(LoginRequest loginRequest);
+        Task<LoginResultDto> LoginUser(LoginRequestDto loginRequest);
     }
 }

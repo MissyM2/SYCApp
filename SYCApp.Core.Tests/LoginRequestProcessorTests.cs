@@ -3,7 +3,7 @@ using Moq;
 using Shouldly;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 using SYCApp.Core.Processors;
 using SYCApp.Domain;
 
@@ -12,26 +12,26 @@ namespace SYCApp.Core
 	public class LoginRequestProcessorTests
     {
         private LoginRequestProcessor _processor;
-        private LoginRequest _request;
-        private Mock<ILoginService> _loginServiceMock;
+        private LoginRequestDto _request;
+        private Mock<ILoginRepository> _loginRepositoryMock;
 
         private List<UserModel> _existingUserModels;
 
         public LoginRequestProcessorTests()
         {
             //Arrange
-            _request = new LoginRequest
+            _request = new LoginRequestDto
             {
                 Username = "test@request.com",
                 LoginDateTime = new DateTime(2021, 10, 20)
             };
             _existingUserModels = new List<UserModel>() { new UserModel() { Id = 1 } };
 
-            //_loginServiceMock = new Mock<ILoginService>();
-            //_loginServiceMock.Setup(q => q.GetAllAsync())
-            //    .Returns(_existingUserModels);
+            _loginRepositoryMock = new Mock<ILoginRepository>();
+            _loginRepositoryMock.Setup(q => q.GetAllAsync())
+                .Returns(_existingUserModels);
 
-            _processor = new LoginRequestProcessor(_loginServiceMock.Object);
+            _processor = new LoginRequestProcessor(_loginRepositoryMock.Object);
         }
 
         [Fact]
@@ -54,7 +54,7 @@ namespace SYCApp.Core
             // ***** Arrange *****
             // arrange was mostly done more globally
             LoginModel savedLogin = null;
-            _loginServiceMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
+            _loginRepositoryMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
                 .Callback<LoginModel>(login =>
                 {
                     savedLogin = login;
@@ -63,7 +63,7 @@ namespace SYCApp.Core
             // ***** Act *****
             await _processor.LoginUser(_request);
 
-            _loginServiceMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Once);
+            _loginRepositoryMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Once);
 
             // ***** Assert ******
             savedLogin.ShouldNotBeNull();
@@ -80,14 +80,14 @@ namespace SYCApp.Core
             // ***** Act *****
             await _processor.LoginUser(_request);
 
-            _loginServiceMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Never);
+            _loginRepositoryMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Never);
         }
 
         [Fact]
         public async Task Should_Return_LoginResponse_With_Request_Values()
         {
             //Act
-            LoginResult result = await _processor.LoginUser(_request);
+            LoginResultDto result = await _processor.LoginUser(_request);
 
             //Assert
             result.ShouldNotBeNull();
@@ -125,7 +125,7 @@ namespace SYCApp.Core
             }
             else
             {
-                _loginServiceMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
+                _loginRepositoryMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
                .Callback<LoginModel>(login =>
                {
                    login.Id = loginId.Value;

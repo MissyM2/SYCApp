@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 using SYCApp.Core.Processors;
 
 namespace SYCApp.WebApi.Controllers
@@ -17,7 +17,7 @@ namespace SYCApp.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> LoginUser(LoginRequest request)
+        public async Task<IActionResult> LoginUser(LoginRequestDto request)
         {
             if (ModelState.IsValid)
             {
@@ -27,7 +27,7 @@ namespace SYCApp.WebApi.Controllers
                     return Ok(result);
                 }
 
-                ModelState.AddModelError(nameof(LoginRequest.LoginDateTime), "No users exist for this id.");
+                ModelState.AddModelError(nameof(LoginRequestDto.LoginDateTime), "No users exist for this id.");
             }
 
             return BadRequest(ModelState);

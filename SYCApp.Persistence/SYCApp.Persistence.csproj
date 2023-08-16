@@ -22,9 +22,9 @@
     <ProjectReference Include="..\SYCApp.Domain\SYCApp.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Services\" />
+    <None Remove="Repositories\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 </Project>

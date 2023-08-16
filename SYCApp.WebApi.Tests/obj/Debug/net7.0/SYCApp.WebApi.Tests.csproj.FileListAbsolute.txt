@@ -205,11 +205,6 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Api.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.genruntimeconfig.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Api.Tests/obj/Debug/net7.0/ref/SYCApp.WebApi.Tests.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/CoverletSourceRootsMapping_SYCApp.WebApi.Tests
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.csproj.AssemblyReference.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.AssemblyInfoInputs.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.AssemblyInfo.cs
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/SYCApp.WebApi.deps.json
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/SYCApp.WebApi.runtimeconfig.json
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/appsettings.Development.json
@@ -404,6 +399,11 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/SYCApp.Maui.Core.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/es/SYCApp.Maui.Core.resources.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/en/SYCApp.Maui.Core.resources.dll
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.csproj.AssemblyReference.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.AssemblyInfoInputs.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.AssemblyInfo.cs
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.csproj.CoreCompileInputs.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.csproj.CopyComplete
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/SYCApp.WebApi.Tests.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/obj/Debug/net7.0/refint/SYCApp.WebApi.Tests.dll

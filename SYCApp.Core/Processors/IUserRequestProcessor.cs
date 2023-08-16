@@ -1,11 +1,11 @@
 ﻿using System;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 
 namespace SYCApp.Core.Processors
 {
 	public interface IUserRequestProcessor
 	{
-        Task<AddUserResult> AddUser(AddUserRequest addUserRequest);
+        Task<AddUserResultDto> AddUser(AddUserRequestDto addUserRequest);
     }
 }
 

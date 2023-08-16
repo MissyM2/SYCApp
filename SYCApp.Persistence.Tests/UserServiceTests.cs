@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using SYCApp.Domain;
-using SYCApp.Persistence.Services;
+using SYCApp.Persistence.Repositories;
 
 namespace SYCApp.Persistence.Tests
 {
-    public class UserServiceTests
+    public class UserRepositoryTests
     {
 
         [Fact]
@@ -31,11 +31,11 @@ namespace SYCApp.Persistence.Tests
                 dbContext.SaveChangesAsync();
             }
 
-            //  need to arrange LoginService
-            var loginService = new LoginService(dbContext);
+            //  need to arrange LoginRepository
+            var loginRepository = new LoginRepository(dbContext);
 
             // ****** Act ******
-            var existingUsers = await loginService.GetAllAsync();
+            var existingUsers = await loginRepository.GetAllAsync();
 
             // ****** Assert *****
             // using default assert
@@ -66,9 +66,9 @@ namespace SYCApp.Persistence.Tests
             };
 
             using var dbContext = new SYCAppDbContext(dbOptions);
-            var userService = new UserService(dbContext);
+            var userRepository = new UserRepository(dbContext);
 
-            //var result = userService.Save(userModel);
+            //var result = userRepository.Save(userModel);
 
             var users = dbContext.Users.ToList();
 

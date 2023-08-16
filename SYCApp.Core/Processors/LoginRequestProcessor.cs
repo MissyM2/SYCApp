@@ -1,7 +1,7 @@
 ﻿using System;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 using SYCApp.Domain;
 using SYCApp.Domain.BaseModels;
 
@@ -9,14 +9,14 @@ namespace SYCApp.Core.Processors
 {
     public class LoginRequestProcessor : ILoginRequestProcessor
     {
-        private ILoginService _loginService;
+        private ILoginRepository _loginRepository;
 
-        public LoginRequestProcessor(ILoginService loginService)
+        public LoginRequestProcessor(ILoginRepository loginRepository)
         {
-            this._loginService = loginService;
+            this._loginRepository = loginRepository;
         }
 
-        public async Task<LoginResult> LoginUser(LoginRequest loginRequest)
+        public async Task<LoginResultDto> LoginUser(LoginRequestDto loginRequest)
         {
             // test
             if (loginRequest == null)
@@ -25,9 +25,9 @@ namespace SYCApp.Core.Processors
             }
 
             // test
-            var existingUsers = await _loginService.GetAllAsync();
+            var existingUsers = await _loginRepository.GetAllAsync();
 
-            var result = CreateLoginObject<LoginResult>(loginRequest);
+            var result = CreateLoginObject<LoginResultDto>(loginRequest);
 
             // save test
             if (existingUsers != null)
@@ -38,9 +38,9 @@ namespace SYCApp.Core.Processors
                 login.UserId = user.Id;
 
                 
-                await _loginService.AddAsync(login);
+                await _loginRepository.AddAsync(login);
 
-                //_loginService.
+                //_loginRepository.
 
                 // test
                 result.LoginId = login.Id;
@@ -61,7 +61,7 @@ namespace SYCApp.Core.Processors
         }
 
         // creation of a generic so I can use it in the above becauxe there is a lot of duplication
-        private static TLoginModel CreateLoginObject<TLoginModel>(LoginRequest loginRequest) where TLoginModel
+        private static TLoginModel CreateLoginObject<TLoginModel>(LoginRequestDto loginRequest) where TLoginModel
             : LoginModelBase, new()
         {
             return new TLoginModel

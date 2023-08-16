@@ -8,21 +8,21 @@
 
   <ItemGroup>
     <None Remove="Enums\" />
-    <None Remove="Models\" />
     <None Remove="Processors\" />
     <None Remove="Contracts\" />
     <None Remove="Contracts\Identity\" />
     <None Remove="Contracts\Persistence\" />
     <None Remove="Contracts\Infrastructure\" />
+    <None Remove="DataTransferObjects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Models\" />
     <Folder Include="Processors\" />
     <Folder Include="Contracts\" />
     <Folder Include="Contracts\Identity\" />
     <Folder Include="Contracts\Persistence\" />
     <Folder Include="Contracts\Infrastructure\" />
+    <Folder Include="DataTransferObjects\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYCApp.Domain\SYCApp.Domain.csproj" />

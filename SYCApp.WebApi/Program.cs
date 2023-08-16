@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Processors;
 using SYCApp.Persistence;
-using SYCApp.Persistence.Services;
+using SYCApp.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,8 +34,10 @@ static void EnsureDatabaseCreated(SqliteConnection conn)
     context.Database.EnsureCreated();
 }
 
-builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 builder.Services.AddScoped<ILoginRequestProcessor, LoginRequestProcessor>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRequestProcessor, UserRequestProcessor>();
 
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Shouldly;
 using SYCApp.Core.Enums;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 using SYCApp.Core.Processors;
 using SYCApp.WebApi.Controllers;
 
@@ -13,15 +13,15 @@ namespace SYCApp.WebApi.Tests
     {
         private Mock<ILoginRequestProcessor> _loginProcessor;
         private LoginController _controller;
-        private LoginRequest _request;
-        private LoginResult _result;
+        private LoginRequestDto _request;
+        private LoginResultDto _result;
 
         public LoginControllerTests()
         {
             _loginProcessor = new Mock<ILoginRequestProcessor>();
             _controller = new LoginController(_loginProcessor.Object);
-            _request = new LoginRequest();
-            _result = new LoginResult();
+            _request = new LoginRequestDto();
+            _result = new LoginResultDto();
 
             //MISSY
             //_loginProcessor.Setup(x => x.LoginUser(_request)).Returns(_result);

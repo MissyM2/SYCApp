@@ -3,7 +3,7 @@ using Moq;
 using Shouldly;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
-using SYCApp.Core.Models;
+using SYCApp.Core.DataTransferObjects;
 using SYCApp.Core.Processors;
 using SYCApp.Domain;
 
@@ -12,17 +12,17 @@ namespace SYCApp.Core
     public class UserRequestProcessorTests
     {
         private UserRequestProcessor _processor;
-        private AddUserRequest _request;
-        private Mock<IUserService> _userServiceMock;
+        private AddUserRequestDto _request;
+        private Mock<IUserRepository> _userRepositoryMock;
 
         private List<UserModel> _existingUserModels;
 
-        public AddUserResult result { get; private set; }
+        public AddUserResultDto result { get; private set; }
 
         public UserRequestProcessorTests()
         {
             //Arrange
-            _request = new AddUserRequest
+            _request = new AddUserRequestDto
             {
                 FirstName="FirstNameU1",
                 LastName="LastNameU1",
@@ -37,11 +37,11 @@ namespace SYCApp.Core
                 HashedPassword = "Password1"
             } };
 
-            _userServiceMock = new Mock<IUserService>();
-            //_userServiceMock.Setup(q => q.GetExistingUserModelsByUsername(_request.UserEmail))
+            _userRepositoryMock = new Mock<IUserRepository>();
+            //_userRepositoryMock.Setup(q => q.GetExistingUserModelsByUsername(_request.UserEmail))
             //    .Returns(_existingUserModels);
 
-            _processor = new UserRequestProcessor(_userServiceMock.Object);
+            _processor = new UserRequestProcessor(_userRepositoryMock.Object);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace SYCApp.Core
 
             UserModel savedUser = null;
 
-            _userServiceMock.Setup(q => q.AddAsync(It.IsAny<UserModel>()))
+            _userRepositoryMock.Setup(q => q.AddAsync(It.IsAny<UserModel>()))
                 .Callback<UserModel>(user =>
                 {
                     savedUser = user;
@@ -74,7 +74,7 @@ namespace SYCApp.Core
             // ***** Act *****
             await _processor.AddUser(_request);
 
-            _userServiceMock.Verify(q => q.AddAsync(It.IsAny<UserModel>()), Times.Once);
+            _userRepositoryMock.Verify(q => q.AddAsync(It.IsAny<UserModel>()), Times.Once);
 
             // ***** Assert ******
             savedUser.ShouldNotBeNull();
@@ -91,7 +91,7 @@ namespace SYCApp.Core
             // ***** Act *****
             await _processor.AddUser(_request);
 
-            _userServiceMock.Verify(q => q.AddAsync(It.IsAny<UserModel>()), Times.Never);
+            _userRepositoryMock.Verify(q => q.AddAsync(It.IsAny<UserModel>()), Times.Never);
         }
 
 
@@ -99,7 +99,7 @@ namespace SYCApp.Core
         public async Task Should_Return_UserResponse_With_Request_Values()
         {
             //Act
-            AddUserResult result = await _processor.AddUser(_request);
+            AddUserResultDto result = await _processor.AddUser(_request);
 
             //Assert
             result.ShouldNotBeNull();
