@@ -4,7 +4,7 @@ using Shouldly;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
 using SYCApp.Core.DataTransferObjects;
-using SYCApp.Core.Processors;
+using SYCApp.Core.Services;
 using SYCApp.Domain;
 
 namespace SYCApp.Core

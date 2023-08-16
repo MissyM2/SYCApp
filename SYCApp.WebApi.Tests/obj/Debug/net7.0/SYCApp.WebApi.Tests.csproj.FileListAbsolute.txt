@@ -259,6 +259,8 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/SYCApp.WebApi.Tests.runtimeconfig.json
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/SYCApp.WebApi.Tests.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/SYCApp.WebApi.Tests.pdb
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/AutoMapper.dll
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/Castle.Core.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/CommunityToolkit.Mvvm.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/bin/Debug/net7.0/DiffEngine.dll

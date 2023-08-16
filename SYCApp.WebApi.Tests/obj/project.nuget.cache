@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Io+DMhpBhL2Fm/JIx19LUKJO0M5WZEe1QhvPPqh4m88VmrV8pANk3lhsQF+2HOwipFyroe+CORpmQrBlooyiOg==",
+  "dgSpecHash": "WZGv12RgtuxIzuBeBtaBnGQG+w4ITT1GQVrSJGbO2cssh4yIYYibgM3I1EHSj5sacydSNoWyMzx1He44Zqeayw==",
   "success": true,
   "projectFilePath": "/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi.Tests/SYCApp.WebApi.Tests.csproj",
   "expectedPackageFiles": [
+    "/Users/missymaloney/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/missymaloney/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
@@ -11,6 +13,7 @@
     "/Users/missymaloney/.nuget/packages/emptyfiles/4.4.0/emptyfiles.4.4.0.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.codecoverage/17.7.0/microsoft.codecoverage.17.7.0.nupkg.sha512",
+    "/Users/missymaloney/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.data.sqlite.core/7.0.10/microsoft.data.sqlite.core.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.10/microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",

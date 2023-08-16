@@ -80,13 +80,6 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.Api/obj/Debug/net7.0/SYCApp.WebApi.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.Api/obj/Debug/net7.0/SYCApp.WebApi.genruntimeconfig.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.Api/obj/Debug/net7.0/ref/SYCApp.WebApi.dll
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.csproj.AssemblyReference.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.AssemblyInfoInputs.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.AssemblyInfo.cs
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.csproj.CoreCompileInputs.cache
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.MvcApplicationPartsAssemblyInfo.cs
-/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.MvcApplicationPartsAssemblyInfo.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/appsettings.Development.json
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/appsettings.json
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/SYCApp.WebApi
@@ -94,6 +87,8 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/SYCApp.WebApi.runtimeconfig.json
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/SYCApp.WebApi.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/SYCApp.WebApi.pdb
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/AutoMapper.dll
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/CommunityToolkit.Mvvm.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/Humanizer.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
@@ -148,6 +143,13 @@
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/SYCApp.Domain.pdb
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/es/SYCApp.Maui.Core.resources.dll
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/bin/Debug/net7.0/en/SYCApp.Maui.Core.resources.dll
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.csproj.AssemblyReference.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.AssemblyInfoInputs.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.AssemblyInfo.cs
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.csproj.CoreCompileInputs.cache
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/SYCApp.WebApi.MvcApplicationPartsAssemblyInfo.cache
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/staticwebassets/msbuild.SYCApp.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/staticwebassets/msbuild.build.SYCApp.WebApi.props
 /Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.SYCApp.WebApi.props

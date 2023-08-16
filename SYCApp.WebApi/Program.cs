@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using SYCApp.Core.Contracts.Identity;
-using SYCApp.Core.Processors;
+using SYCApp.Core.Services;
 using SYCApp.Persistence;
 using SYCApp.Persistence.Repositories;
 
@@ -14,6 +14,8 @@ var conn = new SqliteConnection(builder.Configuration.GetConnectionString("Sqlit
 
 builder.Services.AddDbContext<SYCAppDbContext>(option =>
     option.UseSqlite(conn));
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

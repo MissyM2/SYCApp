@@ -5,7 +5,7 @@ using SYCApp.Core.DataTransferObjects;
 using SYCApp.Domain;
 using SYCApp.Domain.BaseModels;
 
-namespace SYCApp.Core.Processors
+namespace SYCApp.Core.Services
 {
     public class LoginRequestProcessor : ILoginRequestProcessor
     {

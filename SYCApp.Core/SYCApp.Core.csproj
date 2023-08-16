@@ -8,21 +8,21 @@
 
   <ItemGroup>
     <None Remove="Enums\" />
-    <None Remove="Processors\" />
     <None Remove="Contracts\" />
     <None Remove="Contracts\Identity\" />
     <None Remove="Contracts\Persistence\" />
-    <None Remove="Contracts\Infrastructure\" />
     <None Remove="DataTransferObjects\" />
+    <None Remove="Services\" />
+    <None Remove="Profiles\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Processors\" />
     <Folder Include="Contracts\" />
     <Folder Include="Contracts\Identity\" />
     <Folder Include="Contracts\Persistence\" />
-    <Folder Include="Contracts\Infrastructure\" />
     <Folder Include="DataTransferObjects\" />
+    <Folder Include="Services\" />
+    <Folder Include="Profiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SYCApp.Domain\SYCApp.Domain.csproj" />
@@ -32,5 +32,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 </Project>

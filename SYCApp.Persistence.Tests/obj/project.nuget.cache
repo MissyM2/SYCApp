@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "b/2UfC4ZCB7YundYe38+BRRM89yuWcttJCXUPjzj7j3IW9hG3YC/x2h75Y/mE4Nb6wzyfO5poynGuOxruPxOCA==",
+  "dgSpecHash": "bULhtoBFY/cP/EaHI4MfhD6mbfSWnzhP33dNXX0FGmIXyDOixvh5jLzSGlr1QPirqkNeQLxhfAjWM45zS4xnQQ==",
   "success": true,
   "projectFilePath": "/Users/missymaloney/Projects/SYCApp/SYCApp.Persistence.Tests/SYCApp.Persistence.Tests.csproj",
   "expectedPackageFiles": [
+    "/Users/missymaloney/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/missymaloney/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.codecoverage/17.7.0/microsoft.codecoverage.17.7.0.nupkg.sha512",
+    "/Users/missymaloney/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.data.sqlite.core/7.0.10/microsoft.data.sqlite.core.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.10/microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",

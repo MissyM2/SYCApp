@@ -4,7 +4,7 @@ using Shouldly;
 using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Enums;
 using SYCApp.Core.DataTransferObjects;
-using SYCApp.Core.Processors;
+using SYCApp.Core.Services;
 using SYCApp.Domain;
 
 namespace SYCApp.Core
@@ -28,8 +28,8 @@ namespace SYCApp.Core
             _existingUserModels = new List<UserModel>() { new UserModel() { Id = 1 } };
 
             _loginRepositoryMock = new Mock<ILoginRepository>();
-            _loginRepositoryMock.Setup(q => q.GetAllAsync())
-                .Returns(_existingUserModels);
+            //_loginRepositoryMock.Setup(q => q.GetAllAsync())
+            //    .Returns(_existingUserModels);
 
             _processor = new LoginRequestProcessor(_loginRepositoryMock.Object);
         }

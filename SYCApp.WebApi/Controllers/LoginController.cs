@@ -1,7 +1,8 @@
 ﻿using System;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SYCApp.Core.DataTransferObjects;
-using SYCApp.Core.Processors;
+using SYCApp.Core.Services;
 
 namespace SYCApp.WebApi.Controllers
 {
@@ -10,10 +11,13 @@ namespace SYCApp.WebApi.Controllers
     public class LoginController : ControllerBase
     {
         private ILoginRequestProcessor _loginProcessor;
+        private readonly IMapper _mapper;
 
-        public LoginController(ILoginRequestProcessor loginProcessor)
+       
+        public LoginController(ILoginRequestProcessor loginProcessor, IMapper mapper)
         {
             this._loginProcessor = loginProcessor;
+            this._mapper = mapper;
         }
 
         [HttpPost]
@@ -22,9 +26,12 @@ namespace SYCApp.WebApi.Controllers
             if (ModelState.IsValid)
             {
                 var result = await _loginProcessor.LoginUser(request);
+
+                var loginResponse = _mapper.Map<LoginResultDto>(result);
+
                 if (result.Flag == Core.Enums.LoginResultFlag.Success)
                 {
-                    return Ok(result);
+                    return Ok(loginResponse);
                 }
 
                 ModelState.AddModelError(nameof(LoginRequestDto.LoginDateTime), "No users exist for this id.");

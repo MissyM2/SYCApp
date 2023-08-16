@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "OroXOnA7FW6vOXXEdo0oErA+nY6ae73/93ZSNijcuDb9fQQu9sFPtDT2BuDGl1Y3IOvY8cQUrl5mglC+vK2HAw==",
+  "dgSpecHash": "dZIiRMMU1LA06dWJZduYXo0i8xBmsFrkSqExQywjwZxP5+avBNON3kXtgngq2w5AMIK5t3y6M5UL0N1YBt2irQ==",
   "success": true,
   "projectFilePath": "/Users/missymaloney/Projects/SYCApp/SYCApp.WebApi/SYCApp.WebApi.csproj",
   "expectedPackageFiles": [
+    "/Users/missymaloney/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/missymaloney/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "/Users/missymaloney/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.data.sqlite.core/7.0.10/microsoft.data.sqlite.core.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "/Users/missymaloney/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.10/microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",

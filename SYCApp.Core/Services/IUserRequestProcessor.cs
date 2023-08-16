@@ -1,7 +1,7 @@
 ﻿using System;
 using SYCApp.Core.DataTransferObjects;
 
-namespace SYCApp.Core.Processors
+namespace SYCApp.Core.Services
 {
 	public interface IUserRequestProcessor
 	{
