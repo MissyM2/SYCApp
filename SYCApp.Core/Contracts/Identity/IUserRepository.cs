@@ -4,9 +4,16 @@ using SYCApp.Domain;
 
 namespace SYCApp.Core.Contracts.Identity
 {
-	public interface IUserRepository : IGenericRepository<UserModel>
+	public interface IUserRepository : IRepositoryBase<UserModel>
 	{
-        Task<List<UserModel>> GetExistingUserModelsByUsername(string emailAddress);
+
+        IEnumerable<UserModel> GetAllUsers();
+        UserModel GetUserById(int userId);
+        UserModel GetUserWithDetails(int userId);
+        void CreateUser(UserModel user);
+        void UpdateUser(UserModel user);
+        void DeleteUser(UserModel user);
+        IEnumerable<UserModel> GetExistingUserModelsByUsername(string emailAddress);
     }
 }
 

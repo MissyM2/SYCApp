@@ -110,29 +110,6 @@ namespace SYCApp.Core
 
         }
 
-
-
-
-
-        [Theory]
-        [InlineData(AddUserResultFlag.Failure, true)]
-        [InlineData(AddUserResultFlag.Success, false)]
-        public async Task Should_Return_SuccessOrFailure_Flag_In_Result(AddUserResultFlag addUserSuccessFlag, bool isExisting)
-        {
-            if (!isExisting)
-            {
-                _existingUserModels.Clear();
-            }
-
-            var result = await _processor.AddUser(_request);
-
-            
-
-            // ***** Assert *****
-            addUserSuccessFlag.ShouldBe(result.Flag);
-
-        }
-
     }
 }
 

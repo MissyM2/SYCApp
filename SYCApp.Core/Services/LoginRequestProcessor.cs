@@ -25,7 +25,7 @@ namespace SYCApp.Core.Services
             }
 
             // test
-            var existingUsers = await _loginRepository.GetAllAsync();
+            var existingUsers = await _loginRepository.GetAllLogins();
 
             var result = CreateLoginObject<LoginResultDto>(loginRequest);
 
@@ -38,7 +38,7 @@ namespace SYCApp.Core.Services
                 login.UserId = user.Id;
 
                 
-                await _loginRepository.AddAsync(login);
+                await _loginRepository.CreateLogin(login);
 
                 //_loginRepository.
 

@@ -5,6 +5,7 @@ using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Services;
 using SYCApp.Persistence;
 using SYCApp.Persistence.Repositories;
+using SYCApp.WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ var conn = new SqliteConnection(builder.Configuration.GetConnectionString("Sqlit
 builder.Services.AddDbContext<SYCAppDbContext>(option =>
     option.UseSqlite(conn));
 
+builder.Services.ConfigureCors();
+builder.Services.ConfigureRepositoryWrapper();
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddControllers();
@@ -41,9 +44,6 @@ builder.Services.AddScoped<ILoginRequestProcessor, LoginRequestProcessor>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserRequestProcessor, UserRequestProcessor>();
 
-builder.Services.AddCors(options => {
-    options.AddPolicy("AllowAll", policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
-});
 
 var app = builder.Build();
 
@@ -56,7 +56,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll");
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
