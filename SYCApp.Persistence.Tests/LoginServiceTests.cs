@@ -38,7 +38,7 @@ namespace SYCApp.Persistence.Tests
             var loginRepository = new LoginRepository(dbContext);
 
             // ****** Act ******
-            var existingUsers = await loginRepository.GetAllAsync();
+            var existingUsers = await loginRepository.GetAll();
 
             // ****** Assert *****
             // using default assert
@@ -68,7 +68,7 @@ namespace SYCApp.Persistence.Tests
 
             using var dbContext = new SYCAppDbContext(dbOptions);
             var loginRepository = new LoginRepository(dbContext);
-            var result = loginRepository.AddAsync(login);
+            var result = loginRepository.Create(login);
 
             var users = dbContext.Logins.ToList();
 

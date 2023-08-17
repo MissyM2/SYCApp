@@ -4,7 +4,7 @@ using SYCApp.Domain.BaseModels;
 
 namespace SYCApp.Core.DataTransferObjects
 {
-	public class AddUserResultDto : UserModelBase
+	public class AddUserResultDto : BaseEntity
     {
         public AddUserResultFlag Flag { get; set; }
         public int? UserId { get; set; }

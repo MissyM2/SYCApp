@@ -1,5 +1,7 @@
 ﻿using System;
+using SYCApp.Core.Contracts.Identity;
 using SYCApp.Core.Contracts.Persistence;
+using SYCApp.Core.Services;
 using SYCApp.Persistence.Repositories;
 
 namespace SYCApp.WebApi.Extensions
@@ -38,9 +40,14 @@ namespace SYCApp.WebApi.Extensions
         //        MySqlServerVersion.LatestSupportedServerVersion));
         //}
 
-        public static void ConfigureRepositoryWrapper(this IServiceCollection services)
+        public static void ConfigureRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            services.AddScoped(typeof(IAsyncRepositoryBase<>), typeof(AsyncRepositoryBase<>));
+            services.AddScoped<ILoginRepository, LoginRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<ILoginRequestProcessor, LoginRequestProcessor>();
+            services.AddScoped<IUserRequestProcessor, UserRequestProcessor>();
         }
     }
 }

@@ -17,7 +17,7 @@ builder.Services.AddDbContext<SYCAppDbContext>(option =>
     option.UseSqlite(conn));
 
 builder.Services.ConfigureCors();
-builder.Services.ConfigureRepositoryWrapper();
+builder.Services.ConfigureRepositories();
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddControllers();
@@ -38,11 +38,6 @@ static void EnsureDatabaseCreated(SqliteConnection conn)
     using var context = new SYCAppDbContext(builder.Options);
     context.Database.EnsureCreated();
 }
-
-builder.Services.AddScoped<ILoginRepository, LoginRepository>();
-builder.Services.AddScoped<ILoginRequestProcessor, LoginRequestProcessor>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserRequestProcessor, UserRequestProcessor>();
 
 
 var app = builder.Build();

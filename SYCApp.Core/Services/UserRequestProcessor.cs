@@ -11,64 +11,76 @@ namespace SYCApp.Core.Services
     {
         private IUserRepository _userRepository;
 
+        private UserModel _userToBeAdded;
+        private AddUserResultDto _addUserResultDto;
+
         public UserRequestProcessor(IUserRepository userRepository)
         {
             this._userRepository = userRepository;
         }
 
-        public async Task<AddUserResultDto> AddUser(AddUserRequestDto addUserRequest)
+        public async Task<AddUserResultDto> AddUser(AddUserRequestDto addUserRequestDto)
         {
             // test
-            if (addUserRequest == null)
+            if (addUserRequestDto == null)
             {
-                throw new ArgumentNullException(nameof(addUserRequest));
+                throw new ArgumentNullException(nameof(addUserRequestDto));
             }
 
             // test
-            var existingUsers = _userRepository.GetExistingUserModelsByUsername(addUserRequest.UserEmail);
+            var existingUsers = _userRepository.GetExistingUserModelsByUsername(addUserRequestDto.UserEmail);
 
-            var result = CreateAddUserObject<AddUserResultDto>(addUserRequest);
 
             // test
             if (existingUsers == null)
             {
 
-                var addUser = CreateAddUserObject<UserModel>(addUserRequest);
-                //user.UserId = user.Id;
+                _userToBeAdded = new UserModel
+                {
+                    FirstName = addUserRequestDto.FirstName,
+                    LastName = addUserRequestDto.LastName,
+                    UserEmail = addUserRequestDto.UserEmail,
+                    HashedPassword = addUserRequestDto.HashedPassword
+                };
 
 
-                await _userRepository.AddAsync(addUser);
+                await _userRepository.Create(_userToBeAdded);
+
+
 
                 // test
-                result.UserId = addUser.Id;
+                _addUserResultDto.UserId = _userToBeAdded.Id;
 
                 // test
-                result.Flag = AddUserResultFlag.Success;
+                _addUserResultDto.Flag = AddUserResultFlag.Success;
             }
             // not save test
             else
             {
 
                 // test
-                result.Flag = AddUserResultFlag.Failure;
+                _addUserResultDto.Flag = AddUserResultFlag.Failure;
             }
 
 
-            return result;
+            return _addUserResultDto;
         }
 
-        // creation of a generic so I can use it in the above becauxe there is a lot of duplication
-        private static TUserModel CreateAddUserObject<TUserModel>(AddUserRequestDto addUserRequest) where TUserModel
-            : UserModelBase, new()
-        {
-            return new TUserModel
-            {
-                FirstName = addUserRequest.FirstName,
-                LastName = addUserRequest.LastName,
-                UserEmail = addUserRequest.UserEmail,
-                HashedPassword = addUserRequest.HashedPassword,
+        // creation of generics so I can use it in the above becauxe there is a lot of duplication
 
-            };
-        }
+        // create Request Dto
+        //private static TAddUserRequestDto CreateAddUserRequestObject<TAddUserRequestDto>(AddUserRequestDto addUserRequest) where TAddUserRequestDto
+        //    : AddUserRequestDto, new()
+        //{
+        //    return new TAddUserRequestDto
+        //    {
+                
+        //        FirstName = addUserRequest.FirstName,
+        //        LastName = addUserRequest.LastName,
+        //        UserEmail = addUserRequest.UserEmail,
+        //        HashedPassword = addUserRequest.HashedPassword,
+
+        //    };
+        //}
     }
 }

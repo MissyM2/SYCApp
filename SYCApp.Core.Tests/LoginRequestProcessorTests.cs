@@ -14,8 +14,10 @@ namespace SYCApp.Core
         private LoginRequestProcessor _processor;
         private LoginRequestDto _request;
         private Mock<ILoginRepository> _loginRepositoryMock;
+        private Mock<IUserRepository> _userRepositoryMock;
 
         private List<UserModel> _existingUserModels;
+        public UserModel _existingUser;
 
         public LoginRequestProcessorTests()
         {
@@ -25,13 +27,34 @@ namespace SYCApp.Core
                 Username = "test@request.com",
                 LoginDateTime = new DateTime(2021, 10, 20)
             };
-            _existingUserModels = new List<UserModel>() { new UserModel() { Id = 1 } };
+            _existingUserModels = new List<UserModel>()
+            {
+                new UserModel()
+                {
+                    Id = 1,
+                    FirstName="TestUserFirstName",
+                    LastName="TestUserLastName",
+                    UserEmail="test@request.com",
+                    HashedPassword="TestHashedPassword"
+                }
+            };
+
+            _existingUser = new UserModel
+            {
+                Id = 1,
+                FirstName = "TestUserFirstName",
+                LastName = "TestUserLastName",
+                UserEmail = "test@request.com",
+                HashedPassword = "TestHashedPassword"
+            };
 
             _loginRepositoryMock = new Mock<ILoginRepository>();
             //_loginRepositoryMock.Setup(q => q.GetAllAsync())
             //    .Returns(_existingUserModels);
 
-            _processor = new LoginRequestProcessor(_loginRepositoryMock.Object);
+            _userRepositoryMock = new Mock<IUserRepository>();
+
+            _processor = new LoginRequestProcessor(_loginRepositoryMock.Object, _userRepositoryMock.Object);
         }
 
         [Fact]
@@ -54,7 +77,7 @@ namespace SYCApp.Core
             // ***** Arrange *****
             // arrange was mostly done more globally
             LoginModel savedLogin = null;
-            _loginRepositoryMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
+            _loginRepositoryMock.Setup(q => q.Create(It.IsAny<LoginModel>()))
                 .Callback<LoginModel>(login =>
                 {
                     savedLogin = login;
@@ -63,7 +86,7 @@ namespace SYCApp.Core
             // ***** Act *****
             await _processor.LoginUser(_request);
 
-            _loginRepositoryMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Once);
+            _loginRepositoryMock.Verify(q => q.Create(It.IsAny<LoginModel>()), Times.Once);
 
             // ***** Assert ******
             savedLogin.ShouldNotBeNull();
@@ -80,19 +103,20 @@ namespace SYCApp.Core
             // ***** Act *****
             await _processor.LoginUser(_request);
 
-            _loginRepositoryMock.Verify(q => q.AddAsync(It.IsAny<LoginModel>()), Times.Never);
+            _loginRepositoryMock.Verify(q => q.Create(It.IsAny<LoginModel>()), Times.Never);
         }
 
         [Fact]
-        public async Task Should_Return_LoginResponse_With_Request_Values()
+        public async Task Should_Return_LoginResponse_With_UserDetails()
         {
             //Act
-            LoginResultDto result = await _processor.LoginUser(_request);
+            LoginResultDto _loginResultDto = await _processor.LoginUser(_request);
 
             //Assert
-            result.ShouldNotBeNull();
-            result.Username.ShouldBe(_request.Username);
-            result.LoginDateTime.ShouldBe(_request.LoginDateTime);
+            _loginResultDto.ShouldNotBeNull();
+            _loginResultDto.FirstName.ShouldBe(_existingUser.FirstName);
+            _loginResultDto.LastName.ShouldBe(_existingUser.LastName);
+            _loginResultDto.UserEmail.ShouldBe(_request.Username);
 
         }
 
@@ -125,7 +149,7 @@ namespace SYCApp.Core
             }
             else
             {
-                _loginRepositoryMock.Setup(q => q.AddAsync(It.IsAny<LoginModel>()))
+                _loginRepositoryMock.Setup(q => q.Create(It.IsAny<LoginModel>()))
                .Callback<LoginModel>(login =>
                {
                    login.Id = loginId.Value;

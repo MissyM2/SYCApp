@@ -4,14 +4,9 @@ using SYCApp.Domain;
 
 namespace SYCApp.Core.Contracts.Identity
 {
-	public interface ILoginRepository : IRepositoryBase<LoginModel>
+	public interface ILoginRepository : IAsyncRepositoryBase<LoginModel>
     {
-        IEnumerable<LoginModel> GetAllLogins();
-        LoginModel GetLoginById(int loginId);
-        LoginModel GetLoginWithDetails(int loginId);
-        void CreateLogin(LoginModel login);
-        void UpdateLogin(LoginModel login);
-        void DeleteLogin(LoginModel login);
+        Task<LoginModel> GetByUsername(string userName);
     }
 }
 

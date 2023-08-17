@@ -20,7 +20,7 @@
     "SYCApp.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:25320",
+      "applicationUrl": "http://localhost:27453",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
